@@ -52,3 +52,16 @@ The most obvious example of this is the omission of type hints in beginner tutor
 While not using type hints makes it easier to get started in Python, it makes your code
 much, _much_ more difficult to understand, and I believe beginner tutorials should be
 using type hints. They are also the backbone of good interface design.
+
+This is also my playground as a developer to learn more about the design patterns 
+myself and add more examples as I learn about them.
+
+## Project Layout
+TBC
+
+## Contributing
+All contributions, criticisms, and comments are welcome. I am just a single 
+developer working on this project in my free time, and I will probably make mistakes!
+So I'm happy for you to contribute corrections too.
+
+Please read CONTRIBUTING.md for more information.
