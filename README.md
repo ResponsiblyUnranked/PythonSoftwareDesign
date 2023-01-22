@@ -1,5 +1,5 @@
 # Python Software Design
-A collection of examples of how to apply various software design patterns in Python.
+A collection of examples of how to apply various software design patterns in Python. It is primarily focused around Object Oriented Programming (OOP).
 
 ## Introduction
 
