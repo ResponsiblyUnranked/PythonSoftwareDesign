@@ -2,7 +2,7 @@
 
 A collection of examples of how to apply various software design patterns in Python.
 
-It is primarily focused around Object Oriented Programming (OOP).
+It is primarily focused around Object-Oriented Programming (OOP).
 
 ## Introduction
 
@@ -53,15 +53,19 @@ While not using type hints makes it easier to get started in Python, it makes yo
 much, _much_ more difficult to understand, and I believe beginner tutorials should be
 using type hints. They are also the backbone of good interface design.
 
-This is also my playground as a developer to learn more about the design patterns 
-myself and add more examples as I learn about them.
+This is also my playground as a developer to learn more about the design patterns myself
+and add more examples as I learn about them.
 
 ## Project Layout
+
 TBC
 
 ## Contributing
-All contributions, criticisms, and comments are welcome. I am just a single 
-developer working on this project in my free time, and I will probably make mistakes!
+
+All contributions, criticisms, and comments are welcome. I am just a single developer
+working on this project in my free time, and I will probably make mistakes!
 So I'm happy for you to contribute corrections too.
 
-Please read CONTRIBUTING.md for more information.
+Please read
+[CONTRIBUTING.md](https://github.com/Jamie-McKernan/PythonSoftwareDesign/blob/master/CONTRIBUTING.md)
+for more information.
