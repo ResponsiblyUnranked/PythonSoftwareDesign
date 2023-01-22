@@ -41,7 +41,7 @@ then this project should be able to help.
 
 Python is a great language. Because of how easy it is to learn, there are tons of
 beginner-level tutorials on the language. This is great because it makes programming
-more accesible for people who are interested.
+more accessible for people who are interested.
 
 The downside of this, is that there are a lot of people who learn programming in Python,
 but miss key aspects that can really improve your code. Even if you are someone who will
