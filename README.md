@@ -79,5 +79,5 @@ working on this project in my free time, and I will probably make mistakes!
 So I'm happy for you to contribute corrections too.
 
 Please read
-[CONTRIBUTING.md](https://github.com/Jamie-McKernan/PythonSoftwareDesign/blob/master/CONTRIBUTING.md)
+[CONTRIBUTING.md](CONTRIBUTING.md)
 for more information.
