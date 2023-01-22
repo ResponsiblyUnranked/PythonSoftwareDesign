@@ -24,7 +24,7 @@ wasn't for their amazing content (not sponsored).
 ### What?
 
 This is a collection of various best-practices, design patterns, anti-patterns, and
-other useful code examples in Python. It's main goal is to make design patterns in
+other useful code examples in Python. Its main goal is to make design patterns in
 Python approachable and easy to understand. It's here to turn Python "scripters" into
 Python "developers".
 
