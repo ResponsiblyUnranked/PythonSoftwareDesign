@@ -22,7 +22,7 @@ jobs:
         cache: 'poetry'
 
     - name: Install Dependencies
-      run: poetry install --no-interaction
+      run: poetry install --no-interaction --no-root
 
     - name: Run Linting
       run: make lint
