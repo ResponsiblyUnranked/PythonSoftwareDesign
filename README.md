@@ -58,16 +58,9 @@ and add more examples as I learn about them.
 
 ## Project Layout
 
-The project follows a simple Python packaging layout with each new design pattern, 
-principle, or best-practice having its own package (folder with `__init__.py`) under 
-`src/`.
-
-Some ideas can be grouped as a collection, like the 
-[SOLID](https://en.wikipedia.org/wiki/SOLID) principles, and will therefore be 
-grouped under `src/solid/`.
-
-Each principle will have an accompanying `README.md` file with some explanation of 
-the principle, and the following code. Where possible, I will provide anti-patterns too.
+Each pattern, principle, or best-practice will have its own package under `src/`, 
+each of these packages contain a `TUTORIAL.md` explaining the design pattern, and the 
+code behind it.
 
 Please consult the wiki for a guide on navigating all these principles, especially 
 if you are a beginner looking for a structured approach to learning all the concepts.
