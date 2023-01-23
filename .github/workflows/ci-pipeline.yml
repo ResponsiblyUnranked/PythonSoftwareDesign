@@ -26,3 +26,41 @@ jobs:
 
     - name: Run Linting
       run: make lint
+
+  Security Audit:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install Poetry
+      run: pipx install poetry
+
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        cache: 'poetry'
+
+    - name: Install Dependencies
+      run: poetry install --no-interaction --no-root
+
+    - name: Run Bandit
+      run: make bandit
+
+  Tests:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install Poetry
+      run: pipx install poetry
+
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        cache: 'poetry'
+
+    - name: Install Dependencies
+      run: poetry install --no-interaction --no-root
+
+    - name: Run Tests
+      run: make test
