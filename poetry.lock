@@ -404,20 +404,6 @@ tomli = {version = ">=1.0.0", markers = "python_version < \"3.11\""}
 testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "pygments (>=2.7.2)", "requests", "xmlschema"]
 
 [[package]]
-name = "pytest-dependency"
-version = "0.5.1"
-description = "Manage dependencies of tests"
-category = "dev"
-optional = false
-python-versions = "*"
-files = [
-    {file = "pytest-dependency-0.5.1.tar.gz", hash = "sha256:c2a892906192663f85030a6ab91304e508e546cddfe557d692d61ec57a1d946b"},
-]
-
-[package.dependencies]
-pytest = ">=3.6.0"
-
-[[package]]
 name = "pytest-xdist"
 version = "3.1.0"
 description = "pytest xdist plugin for distributed testing, most importantly across multiple CPUs"
@@ -554,4 +540,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "8a8851a198342859e42ef98aa1d0b3d02dbc525befb2702470887c1016e70a7c"
+content-hash = "40c8a0a25395680634a8c1e6bcfd07b32c852425bc9f5570bdb922befd7edc59"
