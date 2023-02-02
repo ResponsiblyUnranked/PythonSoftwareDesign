@@ -60,5 +60,7 @@ In our example, the `BadSoundSpeaker` class might change for more than one reaso
  - To change the speaker mechanics. For example, maybe we need a 'standby' mode instead
 of just 'off', or maybe the volume control is now automatic.
 
- - To allow it to play different types of music
+ - To allow it to play different types of music files
 
+If we think about how a speaker _actually_ works, it just receives electrical data and
+(probably) doesn't care if the music is WAV or MP3.
