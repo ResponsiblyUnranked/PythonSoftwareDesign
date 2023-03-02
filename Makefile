@@ -4,7 +4,7 @@ mypy:
 	poetry run mypy .
 
 flake8:
-	poetry run flake8 . --exclude .git,.mypy_cache,.pytest_cache,.venv
+	poetry run flake8 . --exclude .git,.mypy_cache,.pytest_cache,.venv --max-line-length 88
 
 black:
 	poetry run black .
