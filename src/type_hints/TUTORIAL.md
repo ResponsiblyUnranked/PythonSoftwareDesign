@@ -65,7 +65,7 @@ def add_user(user: UUID, dob: datetime.date, name: str) -> User:
 
 You can now easily answer the previous questions:
 1. `dob` is a Python `date` object, and likely a date of birth.
-2. `user` is a unique ID, whereas name is probably firstname of the user.
+2. `user` is a unique ID, whereas `name` is probably first name of the user.
 3. `result` is a `User` object, which is dataclass containing information about the
 user.
 
@@ -87,7 +87,7 @@ def add_user(user_id: UUID, date_of_birth: datetime.date, username: str) -> User
 
 Type hints generally follow the syntax of the variable name, followed by a colon (`:`), a
 space and then the type hint. For function return types, a hyphen (`-`) and
-"greater than" sign (`>`) go after the arguments, but before the function colon.
+"greater than" sign (`>`) go after the arguments, but before the colon.
 
 Type hints can be specified in several places:
 
