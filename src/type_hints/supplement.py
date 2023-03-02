@@ -9,4 +9,3 @@ class User:
 class Database:
     def create_item(self, *args, **kwargs) -> User:
         ...
-
