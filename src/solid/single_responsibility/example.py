@@ -1,7 +1,7 @@
 from typing import Optional
 from uuid import UUID
 
-from src.solid.single_responsibility.supplement import MP3File
+from src.solid.single_responsibility.supplement import MP3File, Sound
 
 
 # anti-pattern
@@ -22,7 +22,7 @@ class BadSoundSpeaker:
     def change_volume(self, new_volume: int):
         self.volume = new_volume
 
-    def play_music(self, music_file: MP3File) -> Optional[bytes]:
+    def play_music(self, music_file: MP3File) -> Optional[Sound]:
         if self.powered_on:
             return music_file.stream_mp3_data()
         else:
