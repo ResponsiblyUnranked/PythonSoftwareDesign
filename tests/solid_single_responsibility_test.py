@@ -10,6 +10,7 @@ def test_can_instantiate_bad_speaker() -> None:
 
     # then
     assert isinstance(speaker, BadSoundSpeaker)
+    assert not speaker.powered_on
 
 
 def test_can_power_on_bad_speaker() -> None:
