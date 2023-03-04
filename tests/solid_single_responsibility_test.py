@@ -1,6 +1,6 @@
 import pytest
 
-from src.solid.single_responsibility.example import BadSoundSpeaker
+from src.solid.single_responsibility.example import BadSoundSpeaker, GoodSoundSpeaker
 from src.solid.single_responsibility.supplement import MP3File, Sound, WAVFile
 
 
@@ -68,3 +68,23 @@ def test_can_instantiate_sound() -> None:
 
     # then
     assert isinstance(sound, Sound)
+
+
+def test_can_instantiate_good_speaker() -> None:
+    # when
+    speaker = GoodSoundSpeaker()
+
+    # then
+    assert isinstance(speaker, GoodSoundSpeaker)
+    assert not speaker.powered_on
+
+
+def test_can_power_on_good_speaker() -> None:
+    # given
+    speaker = GoodSoundSpeaker()
+
+    # when
+    speaker.power_on()
+
+    # then
+    assert speaker.powered_on
