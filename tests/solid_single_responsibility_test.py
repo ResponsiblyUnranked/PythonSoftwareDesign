@@ -58,3 +58,12 @@ def test_cannot_play_wav_music_from_bad_speaker() -> None:
     with pytest.raises(AttributeError):
         # when
         speaker.play_music(music_file)  # type: ignore
+
+
+def test_can_instantiate_sound() -> None:
+    # when
+    music_data = b"music data"
+    sound = Sound(music_data)
+
+    # then
+    assert isinstance(sound, Sound)
