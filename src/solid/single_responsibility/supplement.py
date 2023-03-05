@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class Sound:
+class SoundData:
     sound_data: bytes
 
 
@@ -12,8 +12,8 @@ class MP3File:
     def __init__(self, data: bytes):
         self.mp3_data = data
 
-    def stream_mp3_data(self) -> Sound:
-        return Sound(self.mp3_data)
+    def stream_mp3_data(self) -> SoundData:
+        return SoundData(self.mp3_data)
 
 
 class WAVFile:
@@ -22,5 +22,5 @@ class WAVFile:
     def __init__(self, data: bytes):
         self.wav_data = data
 
-    def stream_wav_data(self) -> Sound:
-        return Sound(self.wav_data)
+    def stream_wav_data(self) -> SoundData:
+        return SoundData(self.wav_data)
