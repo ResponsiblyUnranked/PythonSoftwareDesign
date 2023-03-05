@@ -99,8 +99,8 @@ def test_can_play_mp3_music_from_good_speaker() -> None:
     speaker.power_on()
 
     # when
-    encoded_music = music_file.stream_mp3_data()
-    speaker_output = speaker.play_sound(encoded_music)
+    raw_sound_data = music_file.stream_mp3_data()
+    speaker_output = speaker.play_sound(raw_sound_data)
 
     # then
     assert speaker_output == SoundData(music_data)
@@ -115,8 +115,8 @@ def test_can_play_wav_music_from_good_speaker() -> None:
     speaker.power_on()
 
     # when
-    encoded_music = music_file.stream_wav_data()
-    speaker_output = speaker.play_sound(encoded_music)
+    raw_sound_data = music_file.stream_wav_data()
+    speaker_output = speaker.play_sound(raw_sound_data)
 
     # then
     assert speaker_output == SoundData(music_data)
