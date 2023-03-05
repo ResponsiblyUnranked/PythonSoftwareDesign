@@ -1,7 +1,7 @@
 import pytest
 
 from src.solid.single_responsibility.example import BadSoundSpeaker, GoodSoundSpeaker
-from src.solid.single_responsibility.supplement import MP3File, Sound, WAVFile
+from src.solid.single_responsibility.supplement import MP3File, SoundData, WAVFile
 
 
 def test_can_instantiate_bad_speaker() -> None:
@@ -44,7 +44,7 @@ def test_can_play_mp3_music_from_bad_speaker() -> None:
     speaker_output = speaker.play_music(music_file)
 
     # then
-    assert speaker_output == Sound(music_data)
+    assert speaker_output == SoundData(music_data)
 
 
 def test_cannot_play_wav_music_from_bad_speaker() -> None:
@@ -61,13 +61,13 @@ def test_cannot_play_wav_music_from_bad_speaker() -> None:
         speaker.play_music(music_file)  # type: ignore
 
 
-def test_can_instantiate_sound() -> None:
+def test_can_instantiate_sound_data() -> None:
     # when
     music_data = b"music data"
-    sound = Sound(music_data)
+    sound = SoundData(music_data)
 
     # then
-    assert isinstance(sound, Sound)
+    assert isinstance(sound, SoundData)
 
 
 def test_can_instantiate_good_speaker() -> None:
