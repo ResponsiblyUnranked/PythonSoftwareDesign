@@ -29,7 +29,7 @@ class BadSoundSpeaker:
             return None
 
 
-# pattern
+# better practice
 class GoodSoundSpeaker:
     speaker_id: UUID
     volume: int
@@ -47,9 +47,12 @@ class GoodSoundSpeaker:
     def change_volume(self, new_volume: int):
         self.volume = new_volume
 
-    # TODO: add tests to demonstrate this
     def play_sound(self, sound: SoundData) -> Optional[SoundData]:
         if self.powered_on:
             return sound
         else:
             return None
+
+
+# best practice
+# TODO: create BestSoundSpeaker as well as some interface for creating SoundData
