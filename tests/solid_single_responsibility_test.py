@@ -88,3 +88,35 @@ def test_can_power_on_good_speaker() -> None:
 
     # then
     assert speaker.powered_on
+
+
+def test_can_play_mp3_music_from_good_speaker() -> None:
+    # given
+    music_data = b"great music"
+    music_file = MP3File(data=music_data)
+
+    speaker = GoodSoundSpeaker()
+    speaker.power_on()
+
+    # when
+    encoded_music = music_file.stream_mp3_data()
+    speaker_output = speaker.play_sound(encoded_music)
+
+    # then
+    assert speaker_output == SoundData(music_data)
+
+
+def test_can_play_wav_music_from_good_speaker() -> None:
+    # given
+    music_data = b"great music"
+    music_file = WAVFile(data=music_data)
+
+    speaker = GoodSoundSpeaker()
+    speaker.power_on()
+
+    # when
+    encoded_music = music_file.stream_wav_data()
+    speaker_output = speaker.play_sound(encoded_music)
+
+    # then
+    assert speaker_output == SoundData(music_data)
