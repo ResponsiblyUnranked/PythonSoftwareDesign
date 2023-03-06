@@ -24,3 +24,13 @@ class WAVFile:
 
     def stream_wav_data(self) -> SoundData:
         return SoundData(self.wav_data)
+
+
+class FLACFile:
+    flac_data: bytes
+
+    def __init__(self, data: bytes):
+        self.flac_data = data
+
+    def get_sound_data(self) -> SoundData:
+        return SoundData(self.flac_data)
