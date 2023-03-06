@@ -1,7 +1,16 @@
 import pytest
 
-from src.solid.single_responsibility.example import BadSoundSpeaker, GoodSoundSpeaker
-from src.solid.single_responsibility.supplement import MP3File, SoundData, WAVFile
+from src.solid.single_responsibility.example import (
+    BadSoundSpeaker,
+    BestSoundSpeaker,
+    GoodSoundSpeaker,
+)
+from src.solid.single_responsibility.supplement import (
+    FLACFile,
+    MP3File,
+    SoundData,
+    WAVFile,
+)
 
 
 def test_can_instantiate_bad_speaker() -> None:
@@ -117,6 +126,21 @@ def test_can_play_wav_music_from_good_speaker() -> None:
     # when
     raw_sound_data = music_file.stream_wav_data()
     speaker_output = speaker.play_sound(raw_sound_data)
+
+    # then
+    assert speaker_output == SoundData(music_data)
+
+
+def test_can_play_flac_music_from_best_speaker() -> None:
+    # given
+    music_data = b"great music"
+    music_file = FLACFile(data=music_data)
+
+    speaker = BestSoundSpeaker()
+    speaker.power_on()
+
+    # when
+    speaker_output = speaker.play_sound(music_file)
 
     # then
     assert speaker_output == SoundData(music_data)
