@@ -76,7 +76,7 @@ works, it turns electrical sound data into mechanical sound waves:
 
 ```python
 class GoodSoundSpeaker:
-    ...
+    # other code here...
     def play_sound(self, sound: SoundData) -> Optional[SoundData]:
         if self.powered_on:
             return sound
@@ -143,3 +143,69 @@ If we analyse the process of playing music on our speaker, we can identify 3 key
 Given that we know that the speaker will stay the same, but the audio formats will
 change, we can see that step 1 could vary between file formats, but steps 2 & 3 will be
 consistent.
+
+With this in mind, let's take a look at the `# best practice` in `example.py`. We first
+notice that we define an interface:
+
+```python
+class PlayableSoundFormat(Protocol):
+    def get_sound_data(self) -> SoundData:
+        ...
+```
+
+A note about this code: the `(Protocol)` part indicates this class is an interface,
+which means it only _describes_ the expected behaviour of any given class, without
+actually implementing it. This is why there is a `...` rather than any actual code.
+If you want to read more on Python Protocols,
+[here is a great article on them.](https://godatadriven.com/blog/protocols-in-python-why-you-need-them/)
+You will see a lot more of them throughout this repository, as they are a great tool
+for designing flexible software.
+
+Now when we design a speaker class like `BestSoundSpeaker`, by using the
+`PlayableSoundFormat` interface, this is how we get the speaker to "not care" about the
+audio file type (as mentioned previously):
+
+```python
+class BestSoundSpeaker:
+    # other code here...
+    def play_sound(self, sound: PlayableSoundFormat) -> Optional[SoundData]:
+        if self.powered_on:
+            return sound.get_sound_data()
+        else:
+            return None
+```
+
+By specifying `PlayableSoundFormat` as the `sound` type, our speaker no longer "cares"
+about what type of audio file we send it, as long as it _acts_ like a
+`PlayableSoundFormat` type, then it will be happy. And _this_ is what polymorphism is.
+
+In our example, in order for an object to "act" like a `PlayableSoundFormat` it needs
+to have a `.get_sound_data()` method which returns a `SoundData` type. If you look at
+the unit test `test_can_play_flac_music_from_best_speaker`, we're using a new type
+`FLACFile` which will "act" like a `PlayableSoundFormat`.
+
+And so with this new `BestSoundSpeaker` class, we can create as many audio types as we
+like, and our speaker will be able to play them as long as they _implement_ the
+`PlayableSoundFormat` interface.
+
+For example, a new class for the OGG Vorbis format
+could look like the following:
+
+```python
+class OGGVorbis:
+    ogg_data: bytes
+
+    def __init__(self, data: bytes):
+        self.ogg_data = data
+    
+    def _process_audio(self) -> bytes:
+        # do some processing of the data here
+        ...
+        
+    def get_sound_data(self) -> SoundData:
+        processed_audio = self._process_audio(self.ogg_data)
+        return SoundData(processed_audio)
+```
+
+And this new format will work fine with our `BestSoundSpeaker` because it implements
+the `.get_sound_data()` method.
