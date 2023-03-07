@@ -6,7 +6,7 @@
 | ----------- | ----------- |
 | `example.py`      | Code examples containing anti-patterns and patterns.       |
 | `supplement.py`     | Additional code to assist in the examples. You don't need to read this to learn the pattern.        |
-| `TUTORIAL.md`       | Information on the design principle, and a commentary of the examples.        |
+| `README.md`       | Tutorial on the design principle, and a commentary of the examples.        |
 | `tests/solid_single_responsibility_test.py`   | Unit tests to show code in action.        |
 
 ## Anti-pattern
