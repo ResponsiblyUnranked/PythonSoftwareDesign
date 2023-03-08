@@ -209,3 +209,16 @@ class OGGVorbis:
 
 And this new format will work fine with our `BestSoundSpeaker` because it implements
 the `.get_sound_data()` method.
+
+## Conclusion
+
+As you can see, with the Single Responsibility principle from the SOLID Principles,
+we've been able to restrict our Sound Speaker class to only have one responsibility -
+to play the digital `SoundData` that is passed to it. We removed the Speaker's
+dependency on various audio file formats, so that it is not concerned by _what kind_
+of audio it receives, but is able to play all sound files that adhere to a standard
+`PlayableSoundFormat` type.
+
+Hopefully this has been a good insight into how to separate responsibilities and
+concerns, and even touch on other good design principles, like using abstractions and
+interfaces.
