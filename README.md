@@ -59,7 +59,7 @@ and add more examples as I learn about them.
 ## Project Layout
 
 Each pattern, principle, or best-practice will have its own package under `src/`, 
-each of these packages contain a `TUTORIAL.md` explaining the design pattern, and the 
+each of these packages contain a `README.md` explaining the design pattern, and the 
 code behind it.
 
 Please consult the wiki for a guide on navigating all these principles, especially 
