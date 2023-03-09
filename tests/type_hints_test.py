@@ -1,7 +1,7 @@
 import datetime
 import uuid
 
-from src.type_hints.examples import add_user
+from src.type_hints.example import add_user
 from src.type_hints.supplement import User
 
 
