@@ -221,3 +221,9 @@ of audio it receives, but is able to play all sound files that adhere to a stand
 Hopefully this has been a good insight into how to separate responsibilities and
 concerns, and even touch on other good design principles, like using abstractions and
 interfaces.
+
+### Additional reading
+
+ - [Another example of Single Responsibility in Python on GitHub](https://github.com/heykarimoff/solid.python/blob/master/1.srp.py)
+ - [ArjanCodes on SOLID Principles](https://www.youtube.com/watch?v=pTB30aXS77U)
+
