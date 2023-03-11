@@ -1,4 +1,4 @@
-# Single Responsibility
+# Single Responsibility Principle
 
 ## Structure
 
