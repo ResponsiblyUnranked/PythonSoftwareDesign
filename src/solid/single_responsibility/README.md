@@ -226,4 +226,3 @@ interfaces.
 
  - [Another example of Single Responsibility in Python on GitHub](https://github.com/heykarimoff/solid.python/blob/master/1.srp.py)
  - [ArjanCodes on SOLID Principles](https://www.youtube.com/watch?v=pTB30aXS77U)
-
