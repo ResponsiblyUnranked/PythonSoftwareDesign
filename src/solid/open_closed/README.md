@@ -10,7 +10,99 @@
 
 ## Anti-pattern
 
-## Better Practice
+Take a look at `JuniorTeacher` in `example.py`. We've got a teacher that has a `name`
+and can teach a class with `.teach_class()`. Now if you look at the tests, this may
+seem like a good way of doing things, as a teacher can teach whatever you want with:
+
+```python
+teacher = JuniorTeacher(name="Maurice Moss")
+teacher.teach_class("maths")
+```
+
+for example. And we can just replace `"maths"` with any other subject! Especially with
+that final return statement in the definition of `.teach_class()` we can freestyle with
+any subject:
+
+```python
+return f"{self.name} is freestyling and teaching {subject}!"
+```
+
+Unfortunately, no matter how good this flexibility may seem, this code follows the very
+opposite of the Open/Closed principle.
+
+The principle suggests that classes/interfaces should be **open for extension, but 
+closed to modification.**
+
+`JuniorTeacher` directly breaks this principle, because if we want to add more lesson
+plans for different subjects, we have to **modify** the class rather than **expanding**
+it. And modification is often bad because it could break your code, whereas extension
+aims to allow you to add functionality without breaking existing code.
+
+### How can modifying our example break it?
+
+At present, our `JuniorTeacher` can only teach maths and science, and will freestyle a
+lesson plan for any other subjects. But let's say we want to allow our teacher to
+teach biology:
+
+```python
+def teach_class(self, subject: str) -> str:
+    if subject == "maths":
+        return f"{self.name} is teaching algebra!"
+
+    if subject == "science":
+        return f"{self.name} is teaching particle physics!"
+
+    if subject == "biology":
+        return f"{self.name} is teaching the human anatomy!"
+
+    return f"{self.name} is freestyling and teaching {subject}!"
+```
+
+This doesn't make as much sense now, since we could consider biology a "science". So we
+should probably change `"science"` to something more specific, like `"physics"`.
+
+And this is where we meet the problem. If we want to add a new subject, or change some
+subjects, we have to risk breaking how the other subjects work!
+
+Changing `"science"` to `"physics"` would break our test, as it was expecting a
+different value (this test is simulating us breaking some other part of our program):
+
+```shell
+tests/open_closed_test.py:23 (test_junior_teacher_can_teach_science)
+Maurice Moss is freestyling and teaching science! != Maurice Moss is teaching particle physics!
+
+Expected :Maurice Moss is teaching particle physics!
+Actual   :Maurice Moss is freestyling and teaching science!
+<Click to see difference>
+
+def test_junior_teacher_can_teach_science() -> None:
+        # given
+        teacher_name = "Maurice Moss"
+        teacher = JuniorTeacher(name=teacher_name)
+    
+        # when
+        lesson = teacher.teach_class("science")
+    
+        # then
+>       assert lesson == f"{teacher_name} is teaching particle physics!"
+E       AssertionError: assert 'Maurice Moss is freestyling and teaching science!' == 'Maurice Moss is teaching particle physics!'
+
+tests/open_closed_test.py:33: AssertionError
+```
+
+As [this article neatly puts it](http://joelabrahamsson.com/a-simple-example-of-the-openclosed-principle/#:~:text=we%20should%20strive%20to%20write%20code%20that%20doesn%E2%80%99t%20have%20to%20be%20changed%20every%20time%20the%20requirements%20change)
+(emphasis mine):
+
+> ...we should strive to write code that doesn't ***have*** to be changed every time the 
+> requirements change.
+
+We can't guarantee that our code will _never_ have to be modified, but the aim is to
+write code that can easily be _expanded upon_ in favour of being modified.
+
+In our example, the requirements changed such that we needed to add a new subject,
+biology, to the subjects that a teacher could teach. But in order to do this, we had
+to **change** the existing `.teach_class()`. Let's take a look at the best practice
+to see how we can improve on this example.
 
 ## Best Practice
 
