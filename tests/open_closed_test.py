@@ -21,6 +21,18 @@ def test_junior_teacher_can_teach_maths() -> None:
     assert lesson == f"{teacher_name} is teaching algebra!"
 
 
+def test_junior_teacher_can_teach_science() -> None:
+    # given
+    teacher_name = "Maurice Moss"
+    teacher = JuniorTeacher(name=teacher_name)
+
+    # when
+    lesson = teacher.teach_class("science")
+
+    # then
+    assert lesson == f"{teacher_name} is teaching particle physics!"
+
+
 def test_can_instantiate_senior_teacher() -> None:
     # when
     subject = Maths()
