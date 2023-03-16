@@ -106,6 +106,23 @@ to see how we can improve on this example.
 
 ## Best Practice
 
+Looking at our `SeniorTeacher` class, it should become clear fairly quickly how this is
+an improvement from `JuniorTeacher`. Immediately, we can see that **teaching a class no
+longer depends on a particular subject**.
+
+If only look at the inputs and outputs of the method, known as the method **signature**
+then we can see that there is no dependency on a subject:
+
+```python
+def teach_class(self) -> str:
+```
+
+We are free to teach a class as we please, without needing to worry about the subject.
+And what this ultimately means, is that we no longer need to change `.teach_class()` if
+we want to add more subjects.
+
+Instead, our `.teach_class()` method now depends on the `Subject` interface.
+
 ## Conclusion
 
 ### Additional reading
