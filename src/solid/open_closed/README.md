@@ -121,7 +121,48 @@ We are free to teach a class as we please, without needing to worry about the su
 And what this ultimately means, is that we no longer need to change `.teach_class()` if
 we want to add more subjects.
 
-Instead, our `.teach_class()` method now depends on the `Subject` interface.
+Instead, our `.teach_class()` method now depends on the `Subject` interface:
+
+```python
+class Subject(Protocol):
+    def get_lesson_plan(self) -> str:
+        ...
+```
+
+We inherit Python's `Protocol` class to indicate that this class is an _interface_.
+This means several things:
+ - We don't define any logic in the class, only **method signatures** (and property
+types)
+ - The class isn't instantiated itself, instead it's only used as a type hint
+ - Any other class that **implements** these methods will be treated as a `Subject`
+class
+
+This is known as [duck typing](https://en.wikipedia.org/wiki/Duck_typing), because:
+
+> If it walks like a duck, and it quacks like a duck, then it must be a duck.
+
+So in our example, ***any*** class that has a `.get_lesson_plan()` method that takes
+exactly zero arguments, and returns a string, will be considered a `Subject`.
+
+So although `Maths` doesn't inherit from `Subject` or mention it in any way, it can be
+treated as a `Subject` class, because it implements that `.get_lesson_plan()` method:
+
+```python
+class Maths:
+    @staticmethod
+    def get_lesson_plan() -> str:
+        return "algebra"
+```
+
+And we are now free to create new lesson plans as we see fit, without having to modify
+`SeniorTeacher` in any way. A music class could look like:
+
+```python
+class Music:
+    @staticmethod
+    def get_lesson_plan() -> str:
+        return "chord structures"
+```
 
 ## Conclusion
 
