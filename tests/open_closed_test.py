@@ -35,8 +35,8 @@ def test_junior_teacher_can_teach_science() -> None:
 
 def test_can_instantiate_senior_teacher() -> None:
     # when
-    subject = Maths()
-    teacher = SeniorTeacher(name="Maurice Moss", subject=subject)
+    maths = Maths()
+    teacher = SeniorTeacher(name="Maurice Moss", subject=maths)
 
     # then
     assert isinstance(teacher, SeniorTeacher)
@@ -45,8 +45,8 @@ def test_can_instantiate_senior_teacher() -> None:
 def test_senior_teacher_can_teach_maths() -> None:
     # given
     teacher_name = "Maurice Moss"
-    subject = Maths()
-    teacher = SeniorTeacher(name=teacher_name, subject=subject)
+    maths = Maths()
+    teacher = SeniorTeacher(name=teacher_name, subject=maths)
 
     # when
     lesson = teacher.teach_class()
@@ -58,8 +58,8 @@ def test_senior_teacher_can_teach_maths() -> None:
 def test_senior_teacher_can_teach_science() -> None:
     # given
     teacher_name = "Maurice Moss"
-    subject = Science()
-    teacher = SeniorTeacher(name=teacher_name, subject=subject)
+    science = Science()
+    teacher = SeniorTeacher(name=teacher_name, subject=science)
 
     # when
     lesson = teacher.teach_class()
