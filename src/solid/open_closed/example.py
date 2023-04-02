@@ -1,7 +1,7 @@
-# anti-pattern
 from typing import Protocol
 
 
+# anti-pattern
 class JuniorTeacher:
     name: str
 
