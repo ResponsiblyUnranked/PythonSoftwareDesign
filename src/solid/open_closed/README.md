@@ -19,7 +19,7 @@ teacher = JuniorTeacher(name="Maurice Moss")
 teacher.teach_class("maths")
 ```
 
-for example. And we can just replace `"maths"` with any other subject! Especially with
+And we can just replace `"maths"` with any other subject! Especially with
 that final return statement in the definition of `.teach_class()` we can freestyle with
 any subject:
 
@@ -110,7 +110,7 @@ Looking at our `SeniorTeacher` class, it should become clear fairly quickly how 
 an improvement from `JuniorTeacher`. Immediately, we can see that **teaching a class no
 longer depends on a particular subject**.
 
-If only look at the inputs and outputs of the method, known as the method **signature**
+If only look at the inputs and outputs of the method, known as the **method signature**
 then we can see that there is no dependency on a subject:
 
 ```python
