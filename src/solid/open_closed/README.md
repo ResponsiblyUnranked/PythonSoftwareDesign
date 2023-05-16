@@ -149,7 +149,6 @@ treated as a `Subject` class, because it implements that `.get_lesson_plan()` me
 
 ```python
 class Maths:
-    @staticmethod
     def get_lesson_plan() -> str:
         return "algebra"
 ```
@@ -159,7 +158,6 @@ And we are now free to create new lesson plans as we see fit, without having to 
 
 ```python
 class Music:
-    @staticmethod
     def get_lesson_plan() -> str:
         return "chord structures"
 ```
