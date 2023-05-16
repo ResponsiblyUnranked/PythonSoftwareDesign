@@ -106,7 +106,7 @@ to see how we can improve on this example.
 
 ## Best Practice
 
-Looking at our `SeniorTeacher` class, it should become clear fairly quickly how this is
+Looking at our `SeniorTeacher` class, it should become clear how this is
 an improvement from `JuniorTeacher`. Immediately, we can see that **teaching a class no
 longer depends on a particular subject**.
 
@@ -161,6 +161,10 @@ class Music:
     def get_lesson_plan() -> str:
         return "chord structures"
 ```
+
+Hopefully this shows that if we think about the designs of our class carefully, we can
+avoid having to _modify_ existing code when _extending_ the functionality - extending
+functionality should extend the code (in most cases).
 
 ## Conclusion
 
