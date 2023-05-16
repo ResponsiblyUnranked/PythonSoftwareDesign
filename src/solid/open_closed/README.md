@@ -168,6 +168,16 @@ Hopefully this shows that if we think about the designs of our class carefully, 
 avoid having to _modify_ existing code when _extending_ the functionality - extending
 functionality should extend the code (in most cases).
 
+As you'll start to see throughout this repository, it becomes ever more important to
+think about your code design _before_ you write any code. Especially when working on
+either:
+
+ - a larger project or
+ - a project that could face many frequent changes
+
+The thinking and planning that happens before you write your first line of code is
+probably more important than the code you write, because it's entirely dependent on it!
+
 ### Additional reading
 
  - [Another example of the Open/Closed Principle in Python on GitHub](https://github.com/heykarimoff/solid.python/blob/master/2.ocp.py)
