@@ -162,11 +162,11 @@ class Music:
         return "chord structures"
 ```
 
+## Conclusion
+
 Hopefully this shows that if we think about the designs of our class carefully, we can
 avoid having to _modify_ existing code when _extending_ the functionality - extending
 functionality should extend the code (in most cases).
-
-## Conclusion
 
 ### Additional reading
 
