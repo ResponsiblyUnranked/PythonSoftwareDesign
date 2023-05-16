@@ -25,14 +25,12 @@ class Subject(Protocol):
 
 
 class Maths:
-    @staticmethod
-    def get_lesson_plan() -> str:
+    def get_lesson_plan(self) -> str:
         return "algebra"
 
 
 class Science:
-    @staticmethod
-    def get_lesson_plan() -> str:
+    def get_lesson_plan(self) -> str:
         return "particle physics"
 
 
