@@ -3,8 +3,8 @@
 mypy:
 	poetry run mypy .
 
-flake8:
-	poetry run flake8 . --exclude .git,.mypy_cache,.pytest_cache,.venv --max-line-length 88
+ruff:
+	poetry run ruff check .
 
 black:
 	poetry run black .
@@ -18,7 +18,7 @@ bandit:
 pytest:
 	poetry run pytest tests/
 
-lint: isort black flake8 mypy
+lint: isort black ruff mypy
 audit: bandit
 test: pytest
 
