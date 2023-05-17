@@ -5,7 +5,6 @@ description = "A collection of examples of how to apply various software design 
 authors = ["Jamie McKernan"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "python_software_design"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
