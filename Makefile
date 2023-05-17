@@ -18,8 +18,11 @@ bandit:
 pytest:
 	poetry run pytest tests/
 
+deptry:
+	poetry run deptry .
+
 lint: isort black ruff mypy
-audit: bandit
+audit: bandit deptry
 test: pytest
 
 all: lint audit test
