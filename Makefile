@@ -16,7 +16,7 @@ bandit:
 	poetry run bandit -c pyproject.toml -r .
 
 pytest:
-	poetry run pytest tests/
+	poetry run pytest tests/ -v
 
 deptry:
 	poetry run deptry .
