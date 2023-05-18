@@ -21,8 +21,11 @@ pytest:
 deptry:
 	poetry run deptry .
 
+install-dependencies:
+	poetry install
+
 lint: isort black ruff mypy
 audit: bandit deptry
 test: pytest
 
-all: lint audit test
+all: install-dependencies lint audit test
