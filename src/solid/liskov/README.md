@@ -238,7 +238,8 @@ immediately obvious to us as a developer, especially when the inheritance hierar
 makes sense when talking about objects with natural language.
 
 If you want to dive into this principle more deeply, take a look inside the
-[`./detailed`](./detailed) directory.
+[`./detailed`](./detailed) directory. It contains the specific rules which form the
+basis of the Liskov substitution principle.
 
 ### Additional reading
 
