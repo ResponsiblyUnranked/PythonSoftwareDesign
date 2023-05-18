@@ -6,6 +6,7 @@
 | ----------- | ----------- |
 | [`./example.py`](example.py)      | Code examples containing anti-patterns and patterns.       |
 | [`tests/liskov_test.py`](../../../tests/liskov_test.py)   | Unit tests to show code in action.        |
+| [`./detailed`](./detailed)      | More detailed examples of the Liskov substitution principle.       |
 
 ## Introduction
 
