@@ -1,10 +1,13 @@
-# anti-pattern
-class VideoGame:
+class Game:
     name: str
 
 
-class PCGame(VideoGame):
-    operating_system: str
+class VideoGame(Game):
+    ...
+
+
+class ConsoleGame(VideoGame):
+    supported_console: str
 
 
 class Gamer:
@@ -12,10 +15,11 @@ class Gamer:
         return True
 
 
-class PCGamer(Gamer):
-    def play_games(self, game: PCGame) -> bool:  # type: ignore[override]
-        if game.operating_system != "windows":
-            raise ValueError("Games only work on Windows.")
+# anti-pattern
+class ConsoleGamer(Gamer):
+    def play_games(self, game: ConsoleGame) -> bool:  # type: ignore[override]
+        if game.supported_console != "xbox":
+            raise ValueError("Game only supported on xbox.")
         else:
             return True
 
