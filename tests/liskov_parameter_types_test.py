@@ -1,9 +1,9 @@
 import pytest
 
 from src.solid.liskov.detailed.parameter_types import (
+    ConsoleGamer,
     Gamer,
     LivingRoom,
-    PCGamer,
     VideoGame,
 )
 
@@ -26,7 +26,7 @@ def test_subclass_usage_works_fine() -> None:
 def test_liskov_violation_breaks_code_with_superclass() -> None:
     # given
     my_game = VideoGame()
-    gamer = PCGamer()
+    gamer = ConsoleGamer()
 
     living_room = LivingRoom(gamer, my_game)
 
