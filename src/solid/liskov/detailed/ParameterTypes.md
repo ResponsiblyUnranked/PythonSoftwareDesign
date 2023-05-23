@@ -1,5 +1,12 @@
 # Detailed Liskov Substitution
 
+## Structure
+
+| File      | Description |
+| ----------- | ----------- |
+| [`./parameter_types.py`](parameter_types.py)      | Code example containing an anti-pattern.       |
+| [`tests/liskov_parameter_types_test.py`](../../../../tests/liskov_parameter_types_test.py)   | Unit tests to show code in action.        |
+
 ## Parameter Types
 
 When inheriting from a class, all method parameter types should match, or be _more_
