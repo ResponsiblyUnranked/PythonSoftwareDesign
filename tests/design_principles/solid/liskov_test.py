@@ -1,6 +1,10 @@
 import pytest
 
-from src.solid.liskov.example import Rectangle, Square, double_shape_size
+from src.design_principles.solid.liskov.example import (
+    Rectangle,
+    Square,
+    double_shape_size,
+)
 
 
 # Introduction

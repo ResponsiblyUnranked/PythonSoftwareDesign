@@ -1,4 +1,9 @@
-from src.solid.open_closed.example import JuniorTeacher, Maths, Science, SeniorTeacher
+from src.design_principles.solid.open_closed.example import (
+    JuniorTeacher,
+    Maths,
+    Science,
+    SeniorTeacher,
+)
 
 
 def test_can_instantiate_junior_teacher() -> None:

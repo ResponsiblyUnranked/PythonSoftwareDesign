@@ -5,8 +5,8 @@
 | File      | Description |
 | ----------- | ----------- |
 | [`./example.py`](example.py)      | Code examples containing anti-patterns and patterns.       |
-| [`tests/liskov_test.py`](../../../tests/liskov_test.py)   | Unit tests to show code in action.        |
-| [`./detailed`](./detailed)      | More detailed examples of the Liskov substitution principle.       |
+| [`tests/liskov_test.py`](../../../../tests/design_principles/solid/liskov_test.py)   | Unit tests to show code in action.        |
+| [`./detailed`](detailed)      | More detailed examples of the Liskov substitution principle.       |
 
 ## Introduction
 
@@ -238,7 +238,7 @@ immediately obvious to us as a developer, especially when the inheritance hierar
 makes sense when talking about objects with natural language.
 
 If you want to dive into this principle more deeply, take a look inside the
-[`./detailed`](./detailed) directory. It contains the specific rules which form the
+[`./detailed`](detailed) directory. It contains the specific rules which form the
 basis of the Liskov substitution principle.
 
 ### Additional reading

@@ -1,7 +1,7 @@
 import datetime
 from uuid import UUID
 
-from src.type_hints.supplement import Database, User
+from src.design_principles.type_hints.supplement import Database, User
 
 
 # example 1

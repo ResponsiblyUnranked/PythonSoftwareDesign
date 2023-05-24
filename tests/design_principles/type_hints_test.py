@@ -1,8 +1,8 @@
 import datetime
 import uuid
 
-from src.type_hints.example import add_user
-from src.type_hints.supplement import User
+from src.design_principles.type_hints.example import add_user
+from src.design_principles.type_hints.supplement import User
 
 
 def test_example_returns_correct_type() -> None:

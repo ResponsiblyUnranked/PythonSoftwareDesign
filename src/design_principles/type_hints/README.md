@@ -7,7 +7,7 @@
 | [`./anti_patterns.py`](anti_patterns.py)  | Examples of what **not** to do, or the problematic code that can be fixed by implementing the design principle.       |
 | [`./example.py`](example.py)       | Counter-examples to the anti-patterns, of how the code could be written to improve the anti-pattern.        |
 | [`./supplement.py`](supplement.py)     | Additional code to assist in the examples. You don't need to read this to learn the pattern.        |
-| [`tests/type_hints_test.py`](../../tests/type_hints_test.py)   | Unit tests to show code in action.        |
+| [`tests/design_principles/type_hints_test.py`](../../../tests/design_principles/type_hints_test.py)   | Unit tests to show code in action.        |
 
 ## Tutorial
 

@@ -5,8 +5,7 @@
 | File      | Description |
 | ----------- | ----------- |
 | [`./example.py`](example.py)      | Code examples containing anti-patterns and patterns.       |
-| [`./supplement.py`](supplement.py)     | Additional code to assist in the examples. You don't need to read this to learn the pattern.        |
-| [`tests/open_closed_test.py`](../../../tests/open_closed_test.py)   | Unit tests to show code in action.        |
+| [`tests/design_principles/solid/open_closed_test.py`](../../../../tests/design_principles/solid/open_closed_test.py)   | Unit tests to show code in action.        |
 
 ## Anti-pattern
 
