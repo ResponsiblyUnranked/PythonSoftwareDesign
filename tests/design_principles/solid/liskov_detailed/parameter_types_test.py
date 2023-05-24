@@ -1,6 +1,6 @@
 import pytest
 
-from src.solid.liskov.detailed.parameter_types import (
+from src.design_principles.solid.liskov.detailed.parameter_types import (
     ConsoleGamer,
     Gamer,
     LivingRoom,

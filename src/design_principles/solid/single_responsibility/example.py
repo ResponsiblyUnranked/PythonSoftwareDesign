@@ -1,7 +1,10 @@
 from typing import Optional, Protocol
 from uuid import UUID
 
-from src.solid.single_responsibility.supplement import MP3File, SoundData
+from src.design_principles.solid.single_responsibility.supplement import (
+    MP3File,
+    SoundData,
+)
 
 
 # anti-pattern

@@ -1,11 +1,11 @@
 import pytest
 
-from src.solid.single_responsibility.example import (
+from src.design_principles.solid.single_responsibility.example import (
     BadSoundSpeaker,
     BestSoundSpeaker,
     GoodSoundSpeaker,
 )
-from src.solid.single_responsibility.supplement import (
+from src.design_principles.solid.single_responsibility.supplement import (
     FLACFile,
     MP3File,
     SoundData,

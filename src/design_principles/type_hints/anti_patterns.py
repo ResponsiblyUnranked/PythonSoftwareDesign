@@ -1,4 +1,4 @@
-from src.type_hints.supplement import Database
+from src.design_principles.type_hints.supplement import Database
 
 
 # anti-pattern 1
