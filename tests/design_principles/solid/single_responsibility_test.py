@@ -56,7 +56,8 @@ def test_can_play_mp3_music_from_bad_speaker() -> None:
     assert speaker_output == SoundData(music_data)
 
 
-def test_cannot_play_wav_music_from_bad_speaker() -> None:
+@pytest.mark.xfail(reason="This test demonstrates an anti-pattern.")
+def test_can_play_wav_music_from_bad_speaker() -> None:
     # given
     music_data = b"great music"
     music_file = WAVFile(data=music_data)
@@ -64,10 +65,11 @@ def test_cannot_play_wav_music_from_bad_speaker() -> None:
     speaker = BadSoundSpeaker()
     speaker.power_on()
 
+    # when
+    speaker_output = speaker.play_music(music_file)  # type: ignore[arg-type]
+
     # then
-    with pytest.raises(AttributeError):
-        # when
-        speaker.play_music(music_file)  # type: ignore
+    assert speaker_output == music_data
 
 
 def test_can_instantiate_sound_data() -> None:
