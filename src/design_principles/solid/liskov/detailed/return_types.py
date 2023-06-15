@@ -7,10 +7,6 @@ class VideoGame(Game):
         ...
 
 
-class CardGame(Game):
-    ...
-
-
 class GameRentalStore:
     def rent_game(self, title: str) -> VideoGame:
         return VideoGame()
@@ -18,4 +14,4 @@ class GameRentalStore:
 
 class IndieGameRentalStore(GameRentalStore):
     def rent_game(self, title: str) -> Game:  # type: ignore[override]
-        return CardGame()
+        return Game()
