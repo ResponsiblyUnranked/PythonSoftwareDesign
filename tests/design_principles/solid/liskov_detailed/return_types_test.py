@@ -1,7 +1,6 @@
 import pytest
 
 from src.design_principles.solid.liskov.detailed.return_types import (
-    CardGame,
     Game,
     GameRentalStore,
     IndieGameRentalStore,
@@ -23,14 +22,6 @@ def test_can_instantiate_videogame() -> None:
 
     # then
     assert isinstance(game, VideoGame)
-
-
-def test_can_instantiate_card_game() -> None:
-    # when
-    game = CardGame()
-
-    # then
-    assert isinstance(game, CardGame)
 
 
 def test_can_save_game_from_rental_store() -> None:
