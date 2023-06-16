@@ -34,3 +34,6 @@ skip_glob = [".mypy_cache/*", ".pytest_cache/*", ".venv/*", ".git/*"]
 
 [tool.bandit]
 exclude_dirs = [".mypy_cache/", ".pytest_cache/", ".venv/", ".git/", "tests/"]
+
+[tool.deptry]
+ignore_misplaced_dev = ["pytest"]
