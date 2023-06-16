@@ -4,8 +4,8 @@
 
 | File      | Description |
 | ----------- | ----------- |
-| [`./example.py`](example.py)      | Code examples containing anti-patterns and patterns.       |
-| [`tests/design_principles/solid/open_closed_test.py`](../../../../tests/design_principles/solid/open_closed_test.py)   | Unit tests to show code in action.        |
+| [`example.py`](example.py)      | Code examples containing anti-patterns and patterns.       |
+| [`tests/open_closed_test.py`](tests/open_closed_test.py)   | Unit tests to show code in action.        |
 
 ## Anti-pattern
 
