@@ -59,15 +59,15 @@ Again, we've broken the LSP here. Take a look inside the example code to see how
 
 We can see that the `GameRentalStore.rent_game()` method will return a `VideoGame`
 instance, a subclass of `Game`. The `IndieGameRentalStore.rent_game()` method however,
-returns a `Game` type. This is less specific than the parent `GameRentalStore.rent_game()`
+returns a `Game` type. This is more abstract than the parent `GameRentalStore.rent_game()`
 method.
 
-It's the being "less specific" here that is breaking the LSP. Because `Game` is less
-specific than `VideoGame`, it isn't guaranteed to have all the methods/properties that
+It's the being "more abstract" here that is breaking the LSP. Because `Game` is more 
+abstract than `VideoGame`, it isn't guaranteed to have all the methods/properties that
 `VideoGame` has.
 
 So in our case, the `.save()` method is only implemented in `VideoGame`. This 
-hopefully highlights why the return types cannot be more generalised than the parent 
+hopefully highlights why the return types cannot be more abstract than the parent 
 class.
 
 ### The Solution
