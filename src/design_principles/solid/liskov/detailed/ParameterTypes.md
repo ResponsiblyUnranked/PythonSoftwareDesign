@@ -4,8 +4,8 @@
 
 | File      | Description |
 | ----------- | ----------- |
-| [`./parameter_types.py`](parameter_types.py)      | Code example containing an anti-pattern.       |
-| [`tests/design_principles/solid/liskov_detailed/parameter_types_test.py`](../../../../../tests/design_principles/solid/liskov_detailed/parameter_types_test.py)   | Unit tests to show code in action.        |
+| [`parameter_types.py`](parameter_types.py)      | Code example containing an anti-pattern.       |
+| [`../tests/parameter_types_test.py`](../tests/parameter_types_test.py)   | Unit tests to show code in action.        |
 
 ## Parameter Types
 
