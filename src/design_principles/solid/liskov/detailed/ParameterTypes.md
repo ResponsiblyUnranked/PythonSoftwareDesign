@@ -97,7 +97,7 @@ inherits from `Gamer`, it is a valid subtype, so it should work right?
 This is a _correct_ assumption and interpretation of the code from the type hints. So
 why didn't it work?
 
-Well, if we had followed the Liskov substitution principle properly, it _would_ have 
+Well, if we had followed the LSP properly, it _would_ have 
 worked. But when we take a closer look at the implementation of `ConsoleGamer`:
 
 ```python
@@ -128,7 +128,7 @@ class Gamer:
 
 And we can see it takes a `game` parameter of type `VideoGame`.
 
-The violation of the Liskov substitution principle occurred when `ConsoleGamer` 
+The violation of the LSP occurred when `ConsoleGamer` 
 changed the type of the`game` parameter in `.play_games(...)` from `VideoGame` to 
 `ConsoleGame`.
 
@@ -168,6 +168,6 @@ You may have noticed in the definition of the `ConsoleGamer` a comment with:
 This is to tell `mypy`, a tool designed to look for
 issues with the type-hints in your code, to ignore the error in my code.
 
-[`mypy`](https://mypy.readthedocs.io/en/stable/) is sophisticated enough that it can actually detect this violation of the
-Liskov substitution principle, so I have to use a comment to suppress the warning so
+[`mypy`](https://mypy.readthedocs.io/en/stable/) is sophisticated enough that it can 
+actually detect this violation of the LSP, so I have to use a comment to suppress the warning so
 that the project will still pass linting checks in GitHub Actions.

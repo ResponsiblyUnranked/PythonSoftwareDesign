@@ -10,23 +10,23 @@
 
 ## Introduction
 
-The consequences of following the Liskov substitution principle are many. So this guide
+The consequences of following the Liskov substitution principle (LSP) are many. So this guide
 will be broken down into an introduction, plus 5 sections to look more closely at
 each of these consequences.
 
-So what is the basic premise of the Liskov substitution principle? It's the idea that
+So what is the basic premise of the LSP? It's the idea that
 subclasses should be able to replace an instance of their superclass without breaking
 the code.
 
 _Sorry what?_
 
 If we have a class `Car` and a class `FordFocus` which inherits from `Car`, this means
-that `FordFocus` is a subclass of `Car`. And if these classes follow the Liskov
-substitution, then wherever our code expects a `Car`, it should still work if we provide
+that `FordFocus` is a subclass of `Car`. And if these classes follow the LSP, then
+wherever our code expects a `Car`, it should still work if we provide
 it with a `FordFocus` instead.
 
 [Robert C. Martin](https://en.wikipedia.org/wiki/Robert_C._Martin) suggested that
-the Liskov substitution principle can sometimes be represented by something that sounds
+the LSP can sometimes be represented by something that sounds
 normal in natural language, but doesn't work when programming.
 
 Perhaps the most common example is the square-rectangle example. In our natural language,
@@ -140,8 +140,7 @@ do with `Rectangle` anymore.
 
 The issue really shows when we _expect_ a `Rectangle` but provide a `Square` instead.
 
-So let's look at some code that better highlights the problem with violating Liskov's
-rule:
+So let's look at some code that better highlights the problem with violating the LSP:
 
 ```python
 def double_shape_size(shape: Rectangle) -> Rectangle:
@@ -224,22 +223,22 @@ liskov_test.py:72: AssertionError
 Process finished with exit code 1
 ```
 
-And this test fails as a result of not following the Liskov substitution principle. If
+And this test fails as a result of not following the LSP. If
 a `Square` inherits from `Rectangle` it should act like a `Rectangle` and _extend_ its
 behaviour, not modify it. [_Sound familiar?_](../open_closed/README.md)
 
 As we will see later, this is an example of **strengthening the pre-conditions.** Just
-one of the many ways that we can violate Liskov's principle!
+one of the many ways that we can violate the LSP!
 
 ## Conclusion
 
-As shown in this tutorial, sometimes Liskov's substitution principle is not always
+As shown in this tutorial, sometimes the LSP is not always
 immediately obvious to us as a developer, especially when the inheritance hierarchy
 makes sense when talking about objects with natural language.
 
 If you want to dive into this principle more deeply, take a look inside the
 [`./detailed`](detailed) directory. It contains the specific rules which form the
-basis of the Liskov substitution principle.
+basis of the LSP.
 
 ### Additional reading
 
