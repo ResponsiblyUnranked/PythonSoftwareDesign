@@ -4,8 +4,8 @@
 
 | File      | Description |
 | ----------- | ----------- |
-| [`./return_types.py`](return_types.py)      | Code example containing an anti-pattern.       |
-| [`tests/design_principles/solid/liskov_detailed/return_types_test.py`](../../../../../tests/design_principles/solid/liskov_detailed/return_types_test.py)   | Unit tests to show code in action.        |
+| [`return_types.py`](return_types.py)      | Code example containing an anti-pattern.       |
+| [`../tests/return_types_test.py`](../tests/return_types_test.py)   | Unit tests to show code in action.        |
 
 ## Return Types
 
