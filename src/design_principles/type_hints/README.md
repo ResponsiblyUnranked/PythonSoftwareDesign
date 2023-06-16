@@ -4,9 +4,9 @@
 
 | File                | Description |
 | -----------         | ----------- |
-| [`./example.py`](example.py)       | Code examples containing anti-patterns and patterns.        |
-| [`./supplement.py`](supplement.py)     | Additional code to assist in the examples. You don't need to read this to learn the pattern.        |
-| [`tests/design_principles/type_hints_test.py`](../../../tests/design_principles/type_hints_test.py)   | Unit tests to show code in action.        |
+| [`example.py`](example.py)       | Code examples containing anti-patterns and patterns.        |
+| [`supplement.py`](supplement.py)     | Additional code to assist in the examples. You don't need to read this to learn the pattern.        |
+| [`tests/type_hints_test.py`](tests/type_hints_test.py)   | Unit tests to show code in action.        |
 
 ## Tutorial
 
