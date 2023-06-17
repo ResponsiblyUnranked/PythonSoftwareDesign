@@ -24,8 +24,8 @@ deptry:
 install-dependencies:
 	poetry install
 
-lint: isort black ruff mypy
-audit: bandit deptry
+lint: isort black
+audit: ruff mypy bandit deptry
 test: pytest
 
 all: install-dependencies lint audit test
