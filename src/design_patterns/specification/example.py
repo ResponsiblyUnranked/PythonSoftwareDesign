@@ -20,7 +20,7 @@ class Employee:
         self.department = department
         self.salary = salary
         self.years_worked = years_worked
-        self.previous_bonus_years: List[str] = []
+        self.previous_bonus_years: List[int] = []
 
     def save(self) -> None:
         pass
@@ -65,7 +65,7 @@ def is_employee_eligible_for_a_raise(employee: Employee) -> bool:
 
     elif employee.department == Department.HR:
         for year in employee.previous_bonus_years:
-            if year == "2022":
+            if year == 2022:
                 return False
         return True
 
