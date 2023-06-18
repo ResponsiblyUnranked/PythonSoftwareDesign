@@ -1,3 +1,7 @@
+from src.design_patterns.specification.employee_specification import \
+    MatchesHiringCriteria, BelongsToDepartment, HadValidName, IsValidWorkingAge, \
+    SalesRaiseEligibility, FinanceRaiseEligibility, DevelopmentRaiseEligibility, \
+    HrRaiseEligibility
 from src.design_patterns.specification.supplement import (
     Department,
     Employee,
@@ -51,3 +55,44 @@ def is_employee_eligible_for_a_raise_anti_pattern(employee: Employee) -> bool:
         return True
 
     return False
+
+
+# best practice
+def hire_new_employee_simple(
+    name: str, age: int, department: Department
+) -> Employee:
+    hiring_specification = MatchesHiringCriteria()
+    new_employee = Employee(name, age, department)
+
+    if hiring_specification.is_satisfied_by(new_employee):
+        return new_employee
+
+    raise InvalidEmployeeError()
+
+
+def hire_new_employee_granular(
+    name: str, age: int, department: Department
+) -> Employee:
+    hiring_specification = (
+        IsValidWorkingAge()
+        & HadValidName()
+        & -BelongsToDepartment(Department.SALES)
+    )
+
+    new_employee = Employee(name, age, department)
+
+    if hiring_specification.is_satisfied_by(new_employee):
+        return new_employee
+
+    raise InvalidEmployeeError()
+
+
+def is_employee_eligible_for_a_raise(employee: Employee) -> bool:
+    raise_specification = (
+        SalesRaiseEligibility()
+        | FinanceRaiseEligibility()
+        | DevelopmentRaiseEligibility()
+        | HrRaiseEligibility()
+    ) & IsValidWorkingAge()
+
+    return raise_specification.is_satisfied_by(employee)
