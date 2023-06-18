@@ -3,7 +3,7 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 
-from src.design_patterns.specification.supplement import Employee, Department
+from src.design_patterns.specification.supplement import Department, Employee
 
 
 # Generic specification framework

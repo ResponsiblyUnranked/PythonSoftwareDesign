@@ -1,7 +1,13 @@
-from src.design_patterns.specification.employee_specification import \
-    MatchesHiringCriteria, BelongsToDepartment, HadValidName, IsValidWorkingAge, \
-    SalesRaiseEligibility, FinanceRaiseEligibility, DevelopmentRaiseEligibility, \
-    HrRaiseEligibility
+from src.design_patterns.specification.employee_specification import (
+    BelongsToDepartment,
+    DevelopmentRaiseEligibility,
+    FinanceRaiseEligibility,
+    HadValidName,
+    HrRaiseEligibility,
+    IsValidWorkingAge,
+    MatchesHiringCriteria,
+    SalesRaiseEligibility,
+)
 from src.design_patterns.specification.supplement import (
     Department,
     Employee,
@@ -58,9 +64,7 @@ def is_employee_eligible_for_a_raise_anti_pattern(employee: Employee) -> bool:
 
 
 # best practice
-def hire_new_employee_simple(
-    name: str, age: int, department: Department
-) -> Employee:
+def hire_new_employee_simple(name: str, age: int, department: Department) -> Employee:
     hiring_specification = MatchesHiringCriteria()
     new_employee = Employee(name, age, department)
 
@@ -70,13 +74,9 @@ def hire_new_employee_simple(
     raise InvalidEmployeeError()
 
 
-def hire_new_employee_granular(
-    name: str, age: int, department: Department
-) -> Employee:
+def hire_new_employee_granular(name: str, age: int, department: Department) -> Employee:
     hiring_specification = (
-        IsValidWorkingAge()
-        & HadValidName()
-        & -BelongsToDepartment(Department.SALES)
+        IsValidWorkingAge() & HadValidName() & -BelongsToDepartment(Department.SALES)
     )
 
     new_employee = Employee(name, age, department)
