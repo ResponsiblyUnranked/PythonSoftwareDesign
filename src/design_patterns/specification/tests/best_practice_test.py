@@ -1,9 +1,9 @@
 import pytest
 
 from src.design_patterns.specification.example import (
-    hire_new_employee_anti_pattern,
-    is_employee_eligible_for_a_raise_anti_pattern, is_employee_eligible_for_a_raise,
-    hire_new_employee_simple, hire_new_employee_granular,
+    hire_new_employee_granular,
+    hire_new_employee_simple,
+    is_employee_eligible_for_a_raise,
 )
 from src.design_patterns.specification.supplement import (
     Department,
@@ -19,7 +19,9 @@ from src.design_patterns.specification.tests.fixtures import (
 
 
 @pytest.mark.parametrize("name,age,department", valid_new_employees)
-def test_can_hire_new_employee_simple(name: str, age: int, department: Department) -> None:
+def test_can_hire_new_employee_simple(
+    name: str, age: int, department: Department
+) -> None:
     # when
     employee = hire_new_employee_simple(name, age, department)
 
@@ -38,7 +40,9 @@ def test_error_raised_for_invalid_employee_simple(
 
 
 @pytest.mark.parametrize("name,age,department", valid_new_employees)
-def test_can_hire_new_employee_granular(name: str, age: int, department: Department) -> None:
+def test_can_hire_new_employee_granular(
+    name: str, age: int, department: Department
+) -> None:
     # when
     employee = hire_new_employee_granular(name, age, department)
 
