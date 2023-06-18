@@ -1,29 +1,7 @@
-from typing import List
-
 from src.design_patterns.specification.supplement import (
     Department,
-    InvalidEmployeeError,
+    InvalidEmployeeError, Employee,
 )
-
-
-class Employee:
-    def __init__(
-        self,
-        name: str,
-        age: int,
-        department: Department,
-        salary: int = 30_000,
-        years_worked: int = 0,
-    ) -> None:
-        self.name = name
-        self.age = age
-        self.department = department
-        self.salary = salary
-        self.years_worked = years_worked
-        self.previous_bonus_years: List[int] = []
-
-    def save(self) -> None:
-        pass
 
 
 # anti-pattern

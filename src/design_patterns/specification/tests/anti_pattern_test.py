@@ -1,13 +1,12 @@
 import pytest
 
 from src.design_patterns.specification.example import (
-    Employee,
     hire_new_employee_anti_pattern,
     is_employee_eligible_for_a_raise_anti_pattern,
 )
 from src.design_patterns.specification.supplement import (
     Department,
-    InvalidEmployeeError,
+    InvalidEmployeeError, Employee,
 )
 from src.design_patterns.specification.tests.fixtures import (
     employees_getting_a_raise,
