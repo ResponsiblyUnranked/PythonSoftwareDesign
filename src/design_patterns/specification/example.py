@@ -27,7 +27,9 @@ class Employee:
 
 
 # anti-pattern
-def hire_new_employee(name: str, age: int, department: Department) -> Employee:
+def hire_new_employee_anti_pattern(
+    name: str, age: int, department: Department
+) -> Employee:
     new_employee = Employee(name, age, department)
 
     if (
@@ -41,7 +43,7 @@ def hire_new_employee(name: str, age: int, department: Department) -> Employee:
     return new_employee
 
 
-def is_employee_eligible_for_a_raise(employee: Employee) -> bool:
+def is_employee_eligible_for_a_raise_anti_pattern(employee: Employee) -> bool:
     if employee.age < 18:
         return False
 
