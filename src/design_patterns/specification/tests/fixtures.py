@@ -1,5 +1,4 @@
-from src.design_patterns.specification.example import Employee
-from src.design_patterns.specification.supplement import Department
+from src.design_patterns.specification.supplement import Department, Employee
 
 valid_new_employees = [
     ("Roy", 31, Department.DEVELOPMENT),
