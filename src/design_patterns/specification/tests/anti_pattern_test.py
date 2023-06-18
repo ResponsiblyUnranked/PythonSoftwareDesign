@@ -6,7 +6,8 @@ from src.design_patterns.specification.example import (
 )
 from src.design_patterns.specification.supplement import (
     Department,
-    InvalidEmployeeError, Employee,
+    Employee,
+    InvalidEmployeeError,
 )
 from src.design_patterns.specification.tests.fixtures import (
     employees_getting_a_raise,
