@@ -1,6 +1,7 @@
 from src.design_patterns.specification.supplement import (
     Department,
-    InvalidEmployeeError, Employee,
+    Employee,
+    InvalidEmployeeError,
 )
 
 
