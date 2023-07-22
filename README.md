@@ -70,7 +70,3 @@ if you are a beginner looking for a structured approach to learning all the conc
 All contributions, criticisms, and comments are welcome. I am just a single developer
 working on this project in my free time, and I will probably make mistakes!
 So I'm happy for you to contribute corrections too.
-
-Please read
-[CONTRIBUTING.md](CONTRIBUTING.md)
-for more information.
