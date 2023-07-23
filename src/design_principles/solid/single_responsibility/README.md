@@ -1,5 +1,7 @@
 # Single Responsibility Principle
 
+_(6 minute read)_
+
 ## Structure
 
 | File      | Description |

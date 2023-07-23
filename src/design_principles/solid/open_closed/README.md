@@ -1,5 +1,7 @@
 # Open / Closed Principle
 
+_(4 minute read)_
+
 ## Structure
 
 | File      | Description |
