@@ -1,5 +1,7 @@
 # Detailed Liskov Substitution
 
+_(3 minute read)_
+
 ## Structure
 
 | File      | Description |
