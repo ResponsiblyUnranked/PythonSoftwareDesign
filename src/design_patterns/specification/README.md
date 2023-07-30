@@ -1,5 +1,7 @@
 # The Specification Pattern
 
+_(15 minute read)_
+
 ## Structure
 
 | File      | Description |
@@ -251,7 +253,198 @@ department's criteria if they are not handing out raises in a given year.
 
 ### So how do we create these classes?
 
+You can see from the previous examples that all the various "criterion" classes we use
+are easily interchangeable, and work like a "plug-and-play" with each other.
+
+In order for this to be true, we need to define some common ground for these classes,
+something for them to inherit from. So we start by setting up an Abstract Base Class
+(ABC):
+
+```python
+class BaseSpecification(ABC):
+    @abstractmethod
+    def is_satisfied_by(self, employee: Employee) -> bool:
+        raise NotImplementedError()
+```
+
+Next we need to expand on this ABC by allowing all class instances to be combined 
+with other class instances using those logical operators, `&`, `|`, and `-`. So we 
+can do this by defining [dunder methods](https://mathspp.com/blog/pydonts/dunder-methods#what-are-dunder-methods)
+for these operators:
+
+```python
+class BaseSpecification(ABC):
+    @abstractmethod
+    def is_satisfied_by(self, employee: Employee) -> bool:
+        raise NotImplementedError()
+
+    def __and__(self, other: BaseSpecification) -> AndSpecification:
+        return AndSpecification(self, other)
+
+    def __or__(self, other: BaseSpecification) -> OrSpecification:
+        return OrSpecification(self, other)
+
+    def __neg__(self) -> NotSpecification:
+        return NotSpecification(self)
+```
+
+#### Dunder methods
+
+You will see the definition for the other classes mentioned here soon. But for now, 
+let's rewrite this in a really simple manner to help explain what's going on. We'll 
+focus on just the `__and__` dunder method for now:
+
+```python
+class Number():
+    def __init__(self, value: int) -> None:
+        self.value = value
+    
+    def __and__(self, other_number: Number) -> int:
+        return self.value + other_number.value
+```
+
+In this small example, we have essentially turned the `&` operator into an addition 
+function. So we can declare two different `Number` instances and when we use `&` 
+they will be added together, because using `&` will call the `__and__` method:
+
+```python
+a = Number(3)
+b = Number(4)
+
+c = a & b  # "c" is now equal to 7 (3 + 4)
+```
+
+With the above code, you can see it resolved as the following:
+
+```python
+def __and__(self, other_number: Number) -> int:
+        # `self` represents the left number in the `&` operation, 3
+        # `other_number` represents the right number in the `&` operation, 4
+        return self.value + other_number.value  # return 3 + 4
+```
+
+Or simply:
+
+```python
+# this
+c = a & b
+
+# is the same as this
+c = a.__and__(b)
+```
+
+**The main takeaway here is that for any of these logical operators, it's called in 
+that generic form:** `left_class.__operation__(right_class)`.
+
+This same principle is applied to the `__or__` (`|`) and `__neg__` (`-`) operations too.
+
+So if we read back at this `BaseSpecification`, we can see that each of these dunder 
+methods returns a custom class for the corresponding logical operator, i.e. 
+`__and__` returns an `AndSpecification` and so forth.
+
+So let's take a look at this class:
+
+```python
+@dataclass
+class AndSpecification(BaseSpecification):
+    first: BaseSpecification
+    second: BaseSpecification
+
+    def is_satisfied_by(self, employee: Employee) -> bool:
+        return self.first.is_satisfied_by(employee) and self.second.is_satisfied_by(
+            employee
+        )
+```
+
+**The very first thing I want to note is that this class _inherits_ from the** 
+`BaseSpecification` **class.** This means that all the previous dunder methods we 
+just looked at can be applied to this class too! As in, it's possible to do:
+
+```python
+AndSpecification(...) & AndSpecification(...)
+# the result of this would be another single `AndSpecification()`
+```
+
+This is very important, as this is what allows our classes to be freely combined 
+with any of the logical operators, in any order.
+
+The only other thing to note here is how the class uses the `and` keyword to do 
+exactly what we hope for:
+
+```python
+def is_satisfied_by(self, employee: Employee) -> bool:
+    return self.first.is_satisfied_by(employee) and self.second.is_satisfied_by(
+        employee
+    )
+```
+
+An `AndSpecification(a, b)` when calling the `.is_satisfied_by(x)` will only return 
+`True` if both `a.is_satisfied_by(x)` and `b.is_satisfied_by(x)` return `True`:
+
+```python
+a = ExampleSpecification()
+b = ExampleSpecification()
+
+c = AndSpecification(a, b)
+
+# this
+d = a.is_satisfied_by(x) and b.is_satisfied_by(x)
+
+# is the same as this
+d = c.is_satisfied_by(x)
+```
+
+_(The value of `x` here is irrelevant, this is to show you it would be the same 
+value being passed to each one)_
+
+### Finally
+
+This allows us to create our actual specification classes now. So for the valid 
+working age we can do the following:
+
+```python
+class IsValidWorkingAge(BaseSpecification):
+    def is_satisfied_by(self, employee: Employee) -> bool:
+        return 18 < employee.age < 99
+```
+
+And since it inherits the `BaseSpecification` it means this `IsValidWorkingAge` can 
+use `&`, `|`, or `-` with any other class that also inherits the `BaseSpecification`.
+If we also have:
+
+```python
+class HadValidName(BaseSpecification):
+    def is_satisfied_by(self, employee: Employee) -> bool:
+        return employee.name != ""
+```
+
+Then the following is true:
+
+```python
+age = IsValidWorkingAge()
+name = HasValidName()
+combined = age & name
+
+# this
+result = age.is_satisfied_by(candidate) and name.is_satisfied_by(candidate)
+
+# is the same as this
+result = combined.is_satisfied_by(candidate)
+```
+
+And behind the scenes, `combined` is an `AndSpecification` type. That last example 
+should reveal how all the parts work together and allow you create complex, and 
+varied specifications.
+
 ## Conclusion
+
+The specification pattern at first may seem complicated, as you're dealing with 
+multiple classes all inheriting and mixing with each other, but hopefully this 
+guide is able to simplify some of the magic and provide understanding as to how you 
+can create your own specifications in your code.
+
+Take a look at the two test files to see how both code examples (anti-pattern and 
+best practice) achieve the same thing, but one is much cleaner than the other.
 
 ### Additional reading
 
