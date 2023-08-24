@@ -103,7 +103,7 @@ into a single variable, which can be easily replaced?
 
 This is where the specification pattern comes in!
 
-## Best practice
+## Best Practice
 
 ### Starting at the end
 

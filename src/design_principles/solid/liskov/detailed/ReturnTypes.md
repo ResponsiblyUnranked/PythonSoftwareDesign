@@ -19,7 +19,7 @@ we learnt that the subclass method must have arguments that match, or are more a
 than the superclass. But here, we learn that the subclass method should have a return
 type that matches, or is more specific than the superclass.
 
-### The Problem
+### The problem
 
 Before we start, let's remind ourselves of the core idea of the Liskov substitution 
 principle (LSP), which is that:
@@ -72,7 +72,7 @@ So in our case, the `.save()` method is only implemented in `VideoGame`. This
 hopefully highlights why the return types cannot be more abstract than the parent 
 class.
 
-### The Solution
+### The solution
 
 The return type should match, or be more specific. So our
 `IndieGameRentalStore.rent_game()` should return either a `VideoGame` instance or 
