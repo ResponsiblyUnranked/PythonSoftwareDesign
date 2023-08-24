@@ -41,7 +41,7 @@ a Square is _technically_ a rectangle as revealed by a simple Google search:
 So how could this be a problem when programming? Let's take a look at the violation
 in `example.py`.
 
-### Simple Example
+### Simple example
 
 If we look at the `Rectangle` and `Square` classes, they make sense in terms of our
 natural language representation. The square is a subtype of rectangle and the

@@ -23,7 +23,7 @@ Yeah, that didn't make it clearer for me either - so let's take a look at the ex
 Rather than walk through the full code in the usual order, I will present the code
 in an order which helps highlight the problem first.
 
-### The Problem
+### The problem
 
 Let's say we have a class, `LivingRoom` which looks like the following:
 
@@ -138,7 +138,7 @@ Because of this violation, although we'd expect that second test to work, it doe
 because the more specific parameter type `ConsoleGame` makes use of a property
 `supported_console` which doesn't exist in the more generic `VideoGame`.
 
-### The Solution
+### The solution
 
 Preventing this issue is simple. In our example, the `ConsoleGamer` should not have
 changed the `game: VideoGame` parameter to the more specific `game: ConsoleGame` type.
