@@ -1,6 +1,9 @@
 import pytest
 
-from src.design_principles.solid.liskov.detailed.strengthen_preconditions import Parrot, FussyParrot
+from src.design_principles.solid.liskov.detailed.strengthen_preconditions import (
+    FussyParrot,
+    Parrot,
+)
 
 
 def test_normal_parrot_can_repeat_number() -> None:
