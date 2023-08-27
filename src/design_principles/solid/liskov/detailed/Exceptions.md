@@ -6,13 +6,13 @@ _(X minute read)_
 
 | File      | Description |
 | ----------- | ----------- |
-| [`exceptions.py`](exceptions.py)      | Code example containing an anti-pattern.       |
+| [`exceptions.py`](exceptions.py)      | Code example containing a pattern and anti-pattern.       |
 | [`../tests/exceptions_test.py`](../tests/exceptions_test.py)   | Unit tests to show code in action.        |
 
 ## Exceptions
 
 When inheriting from a class, all exceptions raised by a method should match, or be a
-subtype of the original exception.
+subtype of the original exception raised in the parent class.
 
 This is because if you have code that is in a try/except block, the exception it is
 expecting to catch could be a generic one and so if you raise that exception, or a
@@ -20,11 +20,11 @@ subtype of that exception then everything will work fine. But if you raise a dif
 type of exception then the error will slip through your try/except and crash your
 program.
 
-The short example should make this easy to understand.
+The following short example should make this easy to understand.
 
 ### The example
 
-Our simple example is about a file system class that can read the files on a computer.
+Our example is about a file system class that can read the files on a computer.
 As you can see, we have three types:
 
  - A generic `SystemFileReader`
@@ -70,13 +70,13 @@ def test_subclass_follows_liskov() -> None:
 Our next test uses the Windows class, and if you look at the original code, this 
 actually raises a `MissingFileError`. You may have also noticed that the code in 
 this test is the exact same as the first test. This is because if Liskov is followed 
-correctly, you _should_ be able to swap these classes and subclasses out without any 
+correctly, you _should_ be able to swap these classes and subclasses without any 
 issues!
 
 And so because `MissingFileError` is a subclass of `FileError`, this test also 
 passes fine.
 
-Our problem comes to when we look at the MacOS test:
+Our problem comes when we look at the MacOS test:
 
 ```python
 def test_subclass_breaks_liskov() -> None:
