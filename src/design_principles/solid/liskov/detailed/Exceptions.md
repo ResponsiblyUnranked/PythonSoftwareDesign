@@ -1,6 +1,6 @@
 # Detailed Liskov Substitution
 
-_(X minute read)_
+_(2 minute read)_
 
 ## Structure
 
