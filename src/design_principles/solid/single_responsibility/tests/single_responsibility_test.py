@@ -56,7 +56,7 @@ def test_can_play_mp3_music_from_bad_speaker() -> None:
     assert speaker_output == SoundData(music_data)
 
 
-@pytest.mark.xfail(reason="This test demonstrates an anti-pattern.")
+@pytest.mark.xfail(reason="This test demonstrates an anti-pattern.", strict=True)
 def test_can_play_wav_music_from_bad_speaker() -> None:
     # given
     music_data = b"great music"

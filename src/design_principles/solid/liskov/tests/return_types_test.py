@@ -35,7 +35,7 @@ def test_can_save_game_from_rental_store() -> None:
     my_game.save()
 
 
-@pytest.mark.xfail(reason="This test demonstrates an anti-pattern.")
+@pytest.mark.xfail(reason="This test demonstrates an anti-pattern.", strict=True)
 def test_can_save_game_from_indie_rental_store() -> None:
     # given
     rental_store = IndieGameRentalStore()
