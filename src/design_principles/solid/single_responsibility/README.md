@@ -122,7 +122,7 @@ and expand on in the future.
 
 In Object Oriented Programming (OOP), polymorphism is the ability of a program to call
 a method of an object without knowing its full type. To explain this in the context of
-our example, polymorphism would allow our speaker to "not care" about what kind of
+our example, polymorphism would allow our speaker to 'not care' about what kind of
 audio format we use, as long as it can be converted to `SoundData`, our speaker will be
 happy to use it.
 
@@ -163,7 +163,7 @@ You will see a lot more of them throughout this repository, as they are a great 
 for designing flexible software.
 
 Now when we design a speaker class like `BestSoundSpeaker`, by using the
-`PlayableSoundFormat` interface, this is how we get the speaker to "not care" about the
+`PlayableSoundFormat` interface, this is how we get the speaker to 'not care' about the
 audio file type (as mentioned previously):
 
 ```python
@@ -176,7 +176,7 @@ class BestSoundSpeaker:
             return None
 ```
 
-By specifying `PlayableSoundFormat` as the `sound` type, our speaker no longer "cares"
+By specifying `PlayableSoundFormat` as the `sound` type, our speaker no longer 'cares'
 about what type of audio file we send it, as long as it _acts_ like a
 `PlayableSoundFormat` type, then it will be happy. And _this_ is what polymorphism is.
 

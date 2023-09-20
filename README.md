@@ -25,8 +25,8 @@ wasn't for their amazing content (not sponsored).
 
 This is a collection of various best-practices, design patterns, anti-patterns, and
 other useful code examples in Python. Its main goal is to make design patterns in
-Python approachable and easy to understand. It's here to turn Python "scripters" into
-Python "developers".
+Python approachable and easy to understand. It's here to turn Python 'scripters' into
+Python 'developers'.
 
 If you find yourself wanting to not just write code that works, but code that:
 

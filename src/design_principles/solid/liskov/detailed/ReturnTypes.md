@@ -64,7 +64,7 @@ instance, a subclass of `Game`. The `IndieGameRentalStore.rent_game()` method ho
 returns a `Game` type. This is more abstract than the parent `GameRentalStore.rent_game()`
 method.
 
-It's the being "more abstract" here that is breaking the LSP. Because `Game` is more 
+It's the being 'more abstract' here that is breaking the LSP. Because `Game` is more 
 abstract than `VideoGame`, it isn't guaranteed to have all the methods/properties that
 `VideoGame` has.
 
