@@ -52,7 +52,7 @@ def test_connection_is_closed_after_query() -> None:
 
 def test_can_create_bad_database_connection() -> None:
     # when
-    connection = BadDatabaseConnection("192.168.0.24:25565")
+    connection = BadDatabaseConnection("192.168.0.24:7777")
 
     # then
     assert isinstance(connection, BadDatabaseConnection)
@@ -61,7 +61,7 @@ def test_can_create_bad_database_connection() -> None:
 
 def test_can_connect_to_bad_database() -> None:
     # given
-    connection = BadDatabaseConnection("192.168.0.24:25565")
+    connection = BadDatabaseConnection("192.168.0.24:7777")
 
     # when
     connection._open()
@@ -72,7 +72,7 @@ def test_can_connect_to_bad_database() -> None:
 
 def test_bad_connection_can_be_closed() -> None:
     # given
-    connection = BadDatabaseConnection("192.168.0.24:25565")
+    connection = BadDatabaseConnection("192.168.0.24:7777")
     connection._open()
 
     # when
@@ -85,7 +85,7 @@ def test_bad_connection_can_be_closed() -> None:
 @pytest.mark.xfail(reason="This test demonstrates an anti-pattern.", strict=True)
 def test_bad_connection_is_closed_after_query() -> None:
     # given
-    connection = BadDatabaseConnection("192.168.0.24:25565")
+    connection = BadDatabaseConnection("192.168.0.24:7777")
 
     # when
     result = connection.query("SELECT * FROM my_data;")
