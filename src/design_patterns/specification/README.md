@@ -16,8 +16,8 @@ _(15 minute read)_
 
 #### Context
 
-Throughout this example, I consider the fictional "company" to be in the process of
-hiring new employees. This "company" has the following hiring criteria:
+Throughout this example, I consider the fictional 'company' to be in the process of
+hiring new employees. This 'company' has the following hiring criteria:
 
  - Candidate is over 18 years old and
  - Candidate is under 99 years old
@@ -112,7 +112,7 @@ quite complex - I know it was for me the first time I read examples of it! So in
 to make things easier to understand, I think it's better to look at the final result
 of using the specification pattern _first_.
 
-We will look at three "end result" examples, each of increasing complexity, and then
+We will look at three 'end result' examples, each of increasing complexity, and then
 we will tackle how you write these classes so that they can be used in this way.
 
 #### Example #1
@@ -134,7 +134,7 @@ thing as the very first code example in this guide.
 
 Okay, so you're probably thinking that I've just moved that original function to be a
 method on the `MatchesHiringCriteria()` class right? Well, I have, but you can already
-see how this has cleaned up our code a lot now. This also separates "validating" a
+see how this has cleaned up our code a lot now. This also separates 'validating' a
 potential candidate, from actually hiring them.
 
 But if we want to adjust these criteria, we still have to change this entire method

@@ -51,7 +51,7 @@ It's when you're trying to:
 - explain your code to a new team member
 - start working on a new project written by somebody else
 
-that you will start to see how this "guesswork" of working out what code does, is not
+that you will start to see how this 'guesswork' of working out what code does, is not
 enough to gain a full understanding and work efficiently.
 
 Take a look at this improved example:
@@ -70,8 +70,8 @@ You can now easily answer the previous questions:
 3. `result` is a `User` object, which is dataclass containing information about the
 user.
 
-However, this can still be improved further as we are still using words like "likely"
-and "probably" in our answers to these questions; there is still guesswork going on.
+However, this can still be improved further as we are still using words like 'likely'
+and 'probably' in our answers to these questions; there is still guesswork going on.
 
 Using type hints and **descriptive** variable names will make the code even more
 readable:
@@ -88,7 +88,7 @@ def add_user(user_id: UUID, date_of_birth: datetime.date, username: str) -> User
 
 Type hints generally follow the syntax of the variable name, followed by a colon (`:`), a
 space and then the type hint. For function return types, a hyphen (`-`) and
-"greater than" sign (`>`) go after the arguments, but before the colon.
+'greater than' sign (`>`) go after the arguments, but before the colon.
 
 Type hints can be specified in several places:
 
