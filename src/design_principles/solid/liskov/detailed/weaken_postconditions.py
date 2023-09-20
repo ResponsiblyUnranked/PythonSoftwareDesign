@@ -27,3 +27,16 @@ class DatabaseConnection:
 
         self._close()
         return data
+
+
+class BadDatabaseConnection(DatabaseConnection):
+    def query(self, query_string: str) -> List[Dict]:
+        self._open()
+        print(f"Running query `{query_string}`")
+
+        data = [
+            {"name": "Zuko", "age": 17},
+            {"name": "Azula", "age": 18},
+        ]
+
+        return data
