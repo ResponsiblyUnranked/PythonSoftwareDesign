@@ -34,7 +34,7 @@ def test_subclass_follows_liskov() -> None:
         assert True
 
 
-@pytest.mark.xfail(reason="This test demonstrates an anti-pattern.")
+@pytest.mark.xfail(reason="This test demonstrates an anti-pattern.", strict=True)
 def test_subclass_breaks_liskov() -> None:
     # given
     reader = MacOSFileReader()

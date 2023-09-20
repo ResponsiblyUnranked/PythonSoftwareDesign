@@ -42,7 +42,7 @@ def test_fussy_parrot_can_repeat_number() -> None:
     assert str(number) in speech
 
 
-@pytest.mark.xfail(reason="This test demonstrates an anti-pattern.")
+@pytest.mark.xfail(reason="This test demonstrates an anti-pattern.", strict=True)
 def test_fussy_parrot_fails_to_repeat_negative_number() -> None:
     # given
     my_pet = FussyParrot("Percy")

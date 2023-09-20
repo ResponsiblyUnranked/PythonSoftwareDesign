@@ -21,7 +21,7 @@ def test_can_change_rectangle_properties() -> None:
     assert shape.height == 0.5
 
 
-@pytest.mark.xfail(reason="This test demonstrates an anti-pattern.")
+@pytest.mark.xfail(reason="This test demonstrates an anti-pattern.", strict=True)
 def test_square_violate_liskov_and_fails() -> None:
     # given
     shape = Square(0, 0)
@@ -62,7 +62,7 @@ def test_can_double_rectangle_size() -> None:
     assert larger_shape.height == 2 * original_height
 
 
-@pytest.mark.xfail(reason="This test demonstrates an anti-pattern.")
+@pytest.mark.xfail(reason="This test demonstrates an anti-pattern.", strict=True)
 def test_cannot_double_square_size() -> None:
     # given
     original_width = 3.2

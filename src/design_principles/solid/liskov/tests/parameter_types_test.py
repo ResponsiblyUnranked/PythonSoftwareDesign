@@ -22,7 +22,7 @@ def test_subclass_usage_works_fine() -> None:
     assert result
 
 
-@pytest.mark.xfail(reason="This test demonstrates an anti-pattern.")
+@pytest.mark.xfail(reason="This test demonstrates an anti-pattern.", strict=True)
 def test_liskov_violation_breaks_code_with_superclass() -> None:
     # given
     my_game = VideoGame()
