@@ -2,18 +2,18 @@ from abc import ABC, abstractmethod
 from typing import Dict
 
 
+class Command(ABC):
+    @abstractmethod
+    def execute(self) -> None:
+        pass
+
+
 class PhotoshopToolSelector:
     def brush(self) -> None:
         print("Selecting Brush tool!")
 
     def eraser(self) -> None:
         print("Selecting Eraser tool!")
-
-
-class Command(ABC):
-    @abstractmethod
-    def execute(self) -> None:
-        pass
 
 
 class SelectBrush(Command):
