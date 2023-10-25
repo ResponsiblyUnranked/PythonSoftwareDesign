@@ -1,4 +1,4 @@
-from src.design_patterns.command.example_one import (
+from src.design_patterns.command.photoshop_example import (
     KeyboardHandler,
     PhotoshopToolSelector,
     SelectBrush,
