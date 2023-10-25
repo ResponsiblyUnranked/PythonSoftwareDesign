@@ -1,4 +1,10 @@
-from src.design_patterns.command.game_example import GameEngine, MoveCommand, LandUnit, SeaUnit, DestroyCommand
+from src.design_patterns.command.game_example import (
+    DestroyCommand,
+    GameEngine,
+    LandUnit,
+    MoveCommand,
+    SeaUnit,
+)
 from src.design_patterns.command.supplement import MovementDirection
 
 
