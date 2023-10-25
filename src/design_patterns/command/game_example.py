@@ -24,6 +24,10 @@ class GameEngine:
         self._command_queue: List[Command] = []
         self._failed_commands: List[Command] = []
 
+    def queue_commands(self, *args: Command) -> None:
+        for command in args:
+            self._command_queue.append(command)
+
     def execute_turn(self) -> None:
         for command in self._command_queue:
             try:
