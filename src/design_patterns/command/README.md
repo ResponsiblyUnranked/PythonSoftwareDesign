@@ -8,8 +8,11 @@ _(X minute read)_
 | ----------- | ----------- |
 | [`photoshop_example.py`](photoshop_example.py)      | An example of the command pattern in use.       |
 | [`tests/photoshop_example_test.py`](tests/photoshop_example_test.py)   | Tests to show how the command pattern is used by client code.        |
+| [`game_example.py`](game_example.py)      | An second example of the command pattern in use.       |
+| [`tests/game_example_test.py`](tests/game_example_test.py)   | Test to show the game code in use.        |
+| [`supplement.py`](supplement.py)   | Boilerplate code that supports the examples.        |
 
-## Photoshop Scenario
+## Photoshop Scenario: Context
 
 Let's look at a common scenario. We are writing some software for a program that uses
 key-bindings. Perhaps these key bindings trigger functions that can also be accessed
@@ -98,3 +101,29 @@ By using the command pattern, we could also expand on the example by keeping a h
 of every command triggered. We could extend the `KeyboardHandler` to additionally
 send any invoked commands to some form of storage in memory, allowing us to keep a log -
 and therefore give way to implementing 'undo' functionality.
+
+## Strategy Game Scenario
+
+The previous example shows us how we can be flexible with our code when using the
+command pattern - we can trigger the same application code from different areas in
+a standardised and controllable manner.
+
+The following example shows us another great feature of using the command pattern,
+the ability to schedule, or queue commands.
+
+I envisage us building a turn-based strategy game where you can plan several 'actions'
+in advance. Each of these 'actions' will be a command. This is where the queueing of
+commands reveals itself, as it will allow our player to plan several moves in advance
+and then execute them in sequence on their turn.
+
+### The Code
+
+Take a look at the `game_example.py` code. _Note: I've moved some boilerplate code (like
+the `Command` ABC) to the `supplement.py` file to keep this example shorter._
+
+Can you identify our receivers and invoker?
+
+We have 2 receivers, a `LandUnit` and a `SeaUnit`. I picture these being controllable
+characters in our game. You can move them or destroy them. Our
+`GameEngine` is our invoker and handles the player's turn. Finally, we have the
+corresponding commands for moving and destroying a unit.
