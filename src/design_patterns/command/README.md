@@ -1,6 +1,6 @@
 # The Command Pattern
 
-_(X minute read)_
+_(8 minute read)_
 
 ## Structure
 
