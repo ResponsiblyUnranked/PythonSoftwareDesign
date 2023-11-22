@@ -21,5 +21,5 @@ def test_player_can_take_turn() -> None:
 
     engine.queue_commands(first_move, second_move, third_move, fourth_move)
 
-    # when
+    # then
     engine.execute_turn()

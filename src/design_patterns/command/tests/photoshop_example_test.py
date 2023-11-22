@@ -17,7 +17,7 @@ def test_can_use_commands() -> None:
 
     key_handler = KeyboardHandler(key_bindings)
 
-    # when
+    # then
     key_handler.handle_input("b")
     key_handler.handle_input("e")
 
@@ -33,5 +33,5 @@ def test_unbound_keys_do_not_raise_error() -> None:
 
     key_handler = KeyboardHandler(key_bindings)
 
-    # when
+    # then
     key_handler.handle_input("x")
