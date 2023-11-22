@@ -3,22 +3,6 @@ from typing import List
 from src.design_patterns.command.supplement import BaseUnit, Command, MovementDirection
 
 
-class LandUnit(BaseUnit):
-    def move(self, direction: MovementDirection, distance: int) -> None:
-        print(f"Moving LandUnit {distance} miles {direction.value}!")
-
-    def destroy(self) -> None:
-        print("Self-destructing LandUnit!")
-
-
-class SeaUnit(BaseUnit):
-    def move(self, direction: MovementDirection, distance: int) -> None:
-        print(f"Moving SeaUnit {distance} miles {direction.value}!")
-
-    def destroy(self) -> None:
-        print("Self-destructing SeaUnit!")
-
-
 class GameEngine:
     def __init__(self) -> None:
         self._command_queue: List[Command] = []
@@ -34,6 +18,22 @@ class GameEngine:
                 command.execute()
             except RuntimeError:
                 self._failed_commands.append(command)
+
+
+class LandUnit(BaseUnit):
+    def move(self, direction: MovementDirection, distance: int) -> None:
+        print(f"Moving LandUnit {distance} miles {direction.value}!")
+
+    def destroy(self) -> None:
+        print("Self-destructing LandUnit!")
+
+
+class SeaUnit(BaseUnit):
+    def move(self, direction: MovementDirection, distance: int) -> None:
+        print(f"Moving SeaUnit {distance} miles {direction.value}!")
+
+    def destroy(self) -> None:
+        print("Self-destructing SeaUnit!")
 
 
 class MoveCommand(Command):
