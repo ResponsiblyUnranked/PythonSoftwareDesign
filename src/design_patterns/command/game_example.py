@@ -20,7 +20,7 @@ class GameEngine:
                 self._failed_commands.append(command)
 
 
-class LandUnit(BaseUnit):
+class LandUnit:
     def move(self, direction: MovementDirection, distance: int) -> None:
         print(f"Moving LandUnit {distance} miles {direction.value}!")
 
@@ -28,7 +28,7 @@ class LandUnit(BaseUnit):
         print("Self-destructing LandUnit!")
 
 
-class SeaUnit(BaseUnit):
+class SeaUnit:
     def move(self, direction: MovementDirection, distance: int) -> None:
         print(f"Moving SeaUnit {distance} miles {direction.value}!")
 
@@ -36,7 +36,7 @@ class SeaUnit(BaseUnit):
         print("Self-destructing SeaUnit!")
 
 
-class MoveCommand(Command):
+class MoveCommand:
     def __init__(
         self, receiver: BaseUnit, direction: MovementDirection, distance: int
     ) -> None:
@@ -48,7 +48,7 @@ class MoveCommand(Command):
         self._receiver.move(self._direction, self._distance)
 
 
-class DestroyCommand(Command):
+class DestroyCommand:
     def __init__(self, receiver: BaseUnit) -> None:
         self._receiver = receiver
 

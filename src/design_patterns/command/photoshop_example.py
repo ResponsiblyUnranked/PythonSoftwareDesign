@@ -1,11 +1,9 @@
-from abc import ABC, abstractmethod
-from typing import Dict
+from typing import Dict, Protocol
 
 
-class Command(ABC):
-    @abstractmethod
+class Command(Protocol):
     def execute(self) -> None:
-        pass
+        ...
 
 
 class PhotoshopToolSelector:
@@ -16,7 +14,7 @@ class PhotoshopToolSelector:
         print("Selecting Eraser tool!")
 
 
-class SelectBrush(Command):
+class SelectBrush:
     def __init__(self, receiver: PhotoshopToolSelector):
         self._receiver = receiver
 
@@ -24,7 +22,7 @@ class SelectBrush(Command):
         self._receiver.brush()
 
 
-class SelectEraser(Command):
+class SelectEraser:
     def __init__(self, receiver: PhotoshopToolSelector):
         self._receiver = receiver
 
@@ -32,7 +30,7 @@ class SelectEraser(Command):
         self._receiver.eraser()
 
 
-class NullCommand(Command):
+class NullCommand:
     def execute(self) -> None:
         pass
 
