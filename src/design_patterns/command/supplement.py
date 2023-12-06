@@ -1,5 +1,5 @@
-from abc import ABC, abstractmethod
 from enum import Enum
+from typing import Protocol
 
 
 class MovementDirection(Enum):
@@ -9,17 +9,14 @@ class MovementDirection(Enum):
     WEST = "WEST"
 
 
-class Command(ABC):
-    @abstractmethod
+class Command(Protocol):
     def execute(self) -> None:
         ...
 
 
-class BaseUnit(ABC):
-    @abstractmethod
+class BaseUnit(Protocol):
     def move(self, direction: MovementDirection, distance: int) -> None:
         ...
 
-    @abstractmethod
     def destroy(self) -> None:
         ...
