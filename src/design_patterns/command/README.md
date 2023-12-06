@@ -43,8 +43,8 @@ merely act as an instance of a **request** to perform the application logic._
 
 To implement the command pattern you would usually need the following:
 
-- An abstract base class to act as a template for all commands
-- A concrete command class which inherits the above ABC
+- An interface for your command(s)
+- A concrete command class which follows the above interface
 - A 'receiver' for the command which performs the application logic
 - An 'invoker' which executes commands
 
@@ -57,7 +57,7 @@ will execute the command using the included receiver.
 If you look at the Photoshop example code, you will see we have followed the above
 guidance and defined:
 
-- A `Command` ABC
+- A `Command` interface (using Python's `Protocol`)
 - Our 'receiver' which can activate various Photoshop tools, `PhotoshopToolSelector`
 - Three commands including a `NullCommand`
 - Our 'invoker', `KeyboardHandler`
@@ -71,7 +71,7 @@ def test_can_use_commands() -> None:
     # given
     tool_selector = PhotoshopToolSelector()
 
-    key_bindings = {
+    key_bindings: Dict[str, Command] = {
         "b": SelectBrush(tool_selector),
         "e": SelectEraser(tool_selector),
     }
@@ -120,7 +120,7 @@ and then execute them in sequence on their turn.
 ### The Code
 
 Take a look at the `game_example.py` code. _Note: I've moved some boilerplate code (like
-the `Command` ABC) to the `supplement.py` file to keep this example shorter._
+the `Command` interface) to the `supplement.py` file to keep this example shorter._
 
 Can you identify our receivers and invoker?
 
@@ -147,7 +147,7 @@ may not be wise to use the command pattern._
 We can observe the passing of dependencies for the move command in our example:
 
 ```python
-class MoveCommand(Command):
+class MoveCommand:
     def __init__(
         self, receiver: BaseUnit, direction: MovementDirection, distance: int
     ) -> None:
